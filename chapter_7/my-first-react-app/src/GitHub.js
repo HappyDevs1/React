@@ -17,8 +17,17 @@ class GitHub extends Component {
     this.setState({ 
     isLoading : false,                   
     })                             
-    console.log(res.data.items);  
-    });              
+    console.log(res.data.items);
+    });
+
+    }
+    render () {
+      return (
+        <div>
+          { this.state.isLoading &&
+          <h4>Getting data...</h4>}
+        </div>
+      )
     }
 }
 
