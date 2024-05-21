@@ -8,9 +8,10 @@ class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: [],
+      users: []
     };
   }
+
   componentDidMount() {
     firebase
       .database()
@@ -23,10 +24,11 @@ class User extends Component {
           returnArr.push(user);
         });
         this.setState({
-          users: returnArr,
+          users: returnArr
         });
       });
   }
+
   render() {
     const listUsers = this.state.users.map((user) => (
       <tr key={user.key}>
@@ -36,6 +38,7 @@ class User extends Component {
         <td>Remove</td>
       </tr>
     ));
+
     return (
       <div>
         <Table striped bordered hover>
