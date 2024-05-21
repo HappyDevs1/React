@@ -6,14 +6,14 @@ import 'firebase/compat/firestore'
 class App extends Component { 
 constructor(){ 
 super(); 
-console.log(firebase); 
+console.log(firebase);
 } 
 render() { 
 return ( 
 <div> 
 <h1>Printing Firebase object to the console</h1> 
 </div> 
-); 
-} 
-} 
+);
+}
+}
 export default App;
