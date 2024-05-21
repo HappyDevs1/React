@@ -1,39 +1,41 @@
-import React, { Component } from 'react';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-import 'firebase/compat/firestore';
-import { Table } from 'react-bootstrap'
+import React, { Component } from "react";
+import firebase from "firebase/compat/app";
+import "firebase/compat/auth";
+import "firebase/compat/firestore";
+import { Table } from "react-bootstrap";
 
 class User extends Component {
   constructor() {
     super(props);
     this.state = {
-      users: []
-    }
+      users: [],
+    };
   }
   componentDidMount() {
-    firebase.database().ref('/')
-      .on('value', snapshot => {
+    firebase
+      .firestore()
+      .ref("/")
+      .on("value", (snapshot) => {
         let returnArr = [];
-        snapshot.forEach(data => {
+        snapshot.forEach((data) => {
           var user = data.val();
-          user['key'] = data.key;
+          user["key"] = data.key;
           returnArr.push(user);
         });
         this.setState({
-          users: returnArr
-        })
-      })
+          users: returnArr,
+        });
+      });
   }
   render() {
-    const listUsers = this.state.users.map((user) =>
+    const listUsers = this.state.users.map((user) => (
       <tr key={user.key}>
         <td>{user.username}</td>
         <td>{user.email}</td>
         <td>Edit</td>
         <td>Remove</td>
       </tr>
-    );
+    ));
     return (
       <div>
         <Table striped bordered hover>
@@ -45,14 +47,11 @@ class User extends Component {
               <th>Delete</th>
             </tr>
           </thead>
-          <tbody>
-            {listUsers}
-          </tbody>
+          <tbody>{listUsers}</tbody>
         </Table>
       </div>
     );
   }
-
 }
 
 export default User;
