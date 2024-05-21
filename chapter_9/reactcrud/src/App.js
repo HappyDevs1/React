@@ -1,7 +1,9 @@
 import React, { Component } from 'react'; 
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import 'firebase/compat/firestore'
+import 'firebase/compat/firestore';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import User from './User'
 
 class App extends Component { 
 constructor(){ 
@@ -11,7 +13,7 @@ console.log(firebase);
 render() { 
 return ( 
 <div> 
-<h1>Printing Firebase object to the console</h1> 
+  <User />
 </div> 
 );
 }

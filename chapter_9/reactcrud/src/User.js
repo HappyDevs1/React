@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
-import 'firebase/compat/firestore'
+import 'firebase/compat/firestore';
+import { Table } from 'react-bootstrap'
 
 class User extends Component {
   constructor() {
@@ -12,15 +13,46 @@ class User extends Component {
   }
   componentDidMount() {
     firebase.database().ref('/')
-    .on('value', snapshot => {
-      console.log(snapshot, val())
-    })
+      .on('value', snapshot => {
+        let returnArr = [];
+        snapshot.forEach(data => {
+          var user = data.val();
+          user['key'] = data.key;
+          returnArr.push(user);
+        });
+        this.setState({
+          users: returnArr
+        })
+      })
   }
-  render() { 
+  render() {
+    const listUsers = this.state.users.map((user) =>
+      <tr key={user.key}>
+        <td>{user.username}</td>
+        <td>{user.email}</td>
+        <td>Edit</td>
+        <td>Remove</td>
+      </tr>
+    );
     return (
-      <div></div>
+      <div>
+        <Table striped bordered hover>
+          <thead>
+            <tr>
+              <th>Username</th>
+              <th>Email</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            {listUsers}
+          </tbody>
+        </Table>
+      </div>
     );
   }
+
 }
- 
+
 export default User;
