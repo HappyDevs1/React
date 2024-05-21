@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
-import "firebase/compat/firestore";
+import "firebase/compat/database";
 import { Table } from "react-bootstrap";
 
 class User extends Component {
-  constructor() {
+  constructor(props) {
     super(props);
     this.state = {
       users: [],
@@ -13,7 +13,7 @@ class User extends Component {
   }
   componentDidMount() {
     firebase
-      .firestore()
+      .database()
       .ref("/")
       .on("value", (snapshot) => {
         let returnArr = [];
