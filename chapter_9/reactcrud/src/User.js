@@ -2,13 +2,15 @@ import React, { Component } from "react";
 import firebase from "firebase/compat/app";
 import "firebase/compat/auth";
 import "firebase/compat/database";
-import { Table, Button } from 'react-bootstrap';
+import { Table, Button, Modal } from 'react-bootstrap';
 
 class User extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users: []
+      users: [],
+      showDeleteDialog: false,
+      selectedUser: {}
     };
     this.add = this.add.bind(this); 
   }
@@ -33,14 +35,23 @@ class User extends Component {
       this.props.history.push("/add");   
       }
 
+      openDeleteDialog(user){     
+        this.setState({         
+        showDeleteDialog: true, 
+        selectedUser: user 
+        });    
+        }
+
   render() { 
     const listUsers = this.state.users.map((user) =>    
     <tr key={user.key}> 
     <td>{user.username}</td> 
     <td>{user.email}</td> 
     <td>Edit</td>                 
-    <td>Remove</td>           
-    </tr>                     
+    <td>Remove</td>
+    <Button 
+onClick={ this.openDeleteDialog.bind(this,user)}>Remove</Button>  
+    </tr>                    
     );  
     return ( 
     <div>
