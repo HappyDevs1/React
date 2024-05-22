@@ -4,7 +4,7 @@ import 'firebase/compat/auth';
 import 'firebase/compat/database';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import User from './User';
-import {BrowserRouter, Route, Switch} from 'react-router-dom'; 
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 class App extends Component { 
 constructor(){ 
