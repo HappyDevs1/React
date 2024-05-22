@@ -42,6 +42,25 @@ class User extends Component {
     });
   }
 
+  closeDeleteDialog() { 
+    this.setState({  
+    showDeleteDialog: false, 
+    selectedUser: {} 
+    }); 
+    }
+
+    delete(e) {     
+      firebase.database().ref('/'+this.state.selectedUser.key).remove() 
+      .then( x=> { 
+      console.log("SUCCESS"); 
+      this.closeDeleteDialog(); 
+      }) 
+      .catch( error => { 
+      alert("Could not delete the user."); 
+      console.log("ERROR", error) 
+      }); 
+      } 
+
   render() {
     const listUsers = this.state.users.map((user) =>
       <tr key={user.key}>
