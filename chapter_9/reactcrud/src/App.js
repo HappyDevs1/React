@@ -18,7 +18,8 @@ return (
 <BrowserRouter> 
 <div>                             
 <Switch>
-<Route path="/add" component={UserForm} />                              
+<Route path="/add" component={UserForm} />
+<Route path="/edit/:id" component={UserForm} />                           
 <Route exact path="/" component={User} />              
 <Route path="/*" component={NotFound} />                        
 </Switch>    
