@@ -39,7 +39,8 @@ class UserForm extends Component {
           enableReinitialize={true}
           initialValues={{
             username: this.state.username,
-            email: this.state.email
+            email: this.state.email,
+            passwods: this.pass
           }}
           validate={values => {
             let errors = {};
