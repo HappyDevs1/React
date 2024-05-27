@@ -1,5 +1,6 @@
 import React from 'react';
-import Products from './Products'
+import Products from './Products';
+
 
 function formatName(user) {
   return user.firstName + " " + user.lastName
