@@ -10,7 +10,7 @@ class Products extends Component {
       this.products = this.getProducts();
     }
 
-    getProducts() {
+    getProducts = () => {
       return [
       { 
           imageUrl: "http://loremflickr.com/150/150?random=1",
