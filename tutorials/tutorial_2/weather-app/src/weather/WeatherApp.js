@@ -20,7 +20,7 @@ let handleMouseOut =(e) =>{
     fetchWeatherAPI();
 }
   return (
-    <>
+  
    <div className="container">
    <div className="row">
        <div className="col-sm-4">
@@ -35,7 +35,6 @@ let handleMouseOut =(e) =>{
       
    </div>
    </div>
-   </>
    
   );
 }
