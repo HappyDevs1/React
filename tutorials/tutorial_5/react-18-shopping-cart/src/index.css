@@ -23,6 +23,13 @@ button {
   width: 100%;
   cursor: pointer;
 }
+button.badge {
+  background-color: #f04040;
+  border: none;
+  color: #ffffff;
+  width: 1.5rem;
+  
+}
 .card {
   background-color: white;
   padding:1rem;

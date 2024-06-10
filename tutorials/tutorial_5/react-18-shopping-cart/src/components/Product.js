@@ -1,5 +1,4 @@
-export default function Product(props) {
-  const { product } = props;
+export default function Product({product, onAdd}) {
   return (
 
     <div className="card">
@@ -7,7 +6,7 @@ export default function Product(props) {
       <h3>{product.name}</h3>
       <div>${product.price}</div>
       <div>
-        <button>Add To Cart</button>
+        <button onClick={() => onAdd(product)}>Add To Cart</button>
       </div>
     </div>
   )
