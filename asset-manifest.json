@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/tutorials/tutorial_5/react-18-shopping-cart/static/css/main.7390c771.css",
+    "main.js": "/tutorials/tutorial_5/react-18-shopping-cart/static/js/main.b5bcb44f.js",
+    "index.html": "/tutorials/tutorial_5/react-18-shopping-cart/index.html",
+    "main.7390c771.css.map": "/tutorials/tutorial_5/react-18-shopping-cart/static/css/main.7390c771.css.map",
+    "main.b5bcb44f.js.map": "/tutorials/tutorial_5/react-18-shopping-cart/static/js/main.b5bcb44f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7390c771.css",
+    "static/js/main.b5bcb44f.js"
+  ]
+}
