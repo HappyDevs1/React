@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-import "./styles.css";
+import "./App.css";
 
 function App() {
   // React States
