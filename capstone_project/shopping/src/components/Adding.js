@@ -5,6 +5,7 @@ function Adding() {
   return (
     <div>
       <Layout />
+      <Footer />
     </div>
   )
 }

@@ -14,6 +14,7 @@ function Login() {
           <input className='input-element' placeholder='password'/>
         </div>
       </form>
+      <Footer />
     </div>
   )
 }
