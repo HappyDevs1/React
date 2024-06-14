@@ -6,7 +6,7 @@ const Layout = ({ children }) => {
       <header>
         <nav className="navbar navbar-expand-lg navbar-light navbar-custom bg-primary">
           <div className="container">
-            <a className="navbar-brand" href="#">Budget Tracker</a>
+            <a className="navbar-brand" href="#">Grocery App</a>
           </div>
         </nav>
       </header>
