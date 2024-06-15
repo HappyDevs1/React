@@ -19,3 +19,14 @@
 .element-container {
   margin-left: 3rem;
 }
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  text-decoration: none;
+}
+.nav-link {
+  color: black;
+  text-decoration: none;
+  margin-right: 5vw;
+}

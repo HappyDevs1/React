@@ -8,6 +8,12 @@ const Layout = ({ children }) => {
           <div className="container">
             <a className="navbar-brand" href="#">Grocery App</a>
           </div>
+          <div>
+        <ul className='nav-items'>
+          <li className='nav-item'><a href='#' className='nav-link'>Register</a></li>
+          <li className='nav-item'><a href='#' className='nav-link'>Login</a></li>
+        </ul>
+      </div>
         </nav>
       </header>
       <main>
