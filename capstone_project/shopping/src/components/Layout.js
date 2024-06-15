@@ -4,7 +4,7 @@ const Layout = ({ children }) => {
   return (
     <div>
       <header>
-        <nav className="navbar navbar-expand-lg navbar-light navbar-custom bg-primary">
+        <nav className="navbar navbar-expand-lg navbar-light navbar-custom bg-warning">
           <div className="container">
             <a className="navbar-brand" href="#">Grocery App</a>
           </div>

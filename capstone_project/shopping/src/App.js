@@ -1,12 +1,12 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Login from './components/Login';
-import './App.css'
+import Main from './components/Main';
+import './App.css';
 
 function App() {
   return (
-    <div>
-      <Login />
+    <div className='app'>
+      <Main />
     </div>
   )
 }
