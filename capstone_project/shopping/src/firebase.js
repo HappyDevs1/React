@@ -36,4 +36,4 @@ const saveUserData = async (user) => {
   }
 };
 
-export default { auth, db, saveUserData };
+export { auth, db, saveUserData };

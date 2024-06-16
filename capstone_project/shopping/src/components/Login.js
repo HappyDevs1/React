@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Layout from "./Layout";
 import Footer from "./Footer";
-import auth from "../firebase";
+import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
 function Login() {
