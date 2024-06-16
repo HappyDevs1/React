@@ -38,7 +38,7 @@ function SignUp() {
               value={email}
               type="email"
               className="input-element"
-              placeholder="username"
+              placeholder="email"
             />
           </div>
           <div className="form-group">

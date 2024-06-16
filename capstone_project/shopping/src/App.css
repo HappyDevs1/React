@@ -30,3 +30,8 @@
   text-decoration: none;
   margin-right: 5vw;
 }
+.footer {
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+}

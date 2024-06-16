@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Layout = ({ children }) => {
   return (
@@ -10,8 +11,21 @@ const Layout = ({ children }) => {
           </div>
           <div>
         <ul className='nav-items'>
-          <li className='nav-item'><a href='#' className='nav-link'>Register</a></li>
-          <li className='nav-item'><a href='#' className='nav-link'>Login</a></li>
+          <li className='nav-item'>
+            <Link to="/" style={{ textDecoration: 'none' }}>
+            <div className='nav-link'>Home</div>
+            </Link>
+          </li>
+          <li className='nav-item'>
+            <Link to="/signup" style={{ textDecoration: 'none' }}>
+            <div className='nav-link'>Register</div>
+            </Link>
+          </li>
+          <li>
+            <Link to="/login" style={{ textDecoration: 'none' }}>
+            <div className='nav-link'>Login</div>
+            </Link>
+          </li>
         </ul>
       </div>
         </nav>
