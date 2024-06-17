@@ -8,6 +8,8 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [registered, setRegistered] = useState(false);
+
   function handleSignUp(event) {
     event
       .preventDefault()
@@ -18,6 +20,7 @@ function SignUp() {
           password
         );
         console.log("User created: ", userCredential.user);
+        setRegistered(true)
       })
       .catch(() => {
         console.log("Error signing up user");
