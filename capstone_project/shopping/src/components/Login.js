@@ -1,3 +1,4 @@
+// Login.js
 import React, { useState } from "react";
 import Layout from "./Layout";
 import Footer from "./Footer";
@@ -7,23 +8,19 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  const [loggedIn, setloggedIn] = useState(false);
-
-  function handleLogin(event) {
-    event
-      .preventDefault()
-      .then(() => {
-        const userCredential = signInWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        console.log("Logged in as:", userCredential.user);
-      })
-      .catch((error) => {
-        console.error("Error logging in:", error);
-      });
+  async function handleLogin(event) {
+    event.preventDefault();
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+      console.log("Logged in as:", userCredential.user);
+      setLoggedIn(true);
+    } catch (error) {
+      console.error("Error logging in:", error);
+    }
+    setEmail("");
+    setPassword("");
   }
 
   return (
@@ -35,9 +32,7 @@ function Login() {
           <div className="form-group">
             <label>Email</label>
             <input
-              onChange={(event) => {
-                setEmail(event.target.event);
-              }}
+              onChange={(event) => setEmail(event.target.value)}
               value={email}
               type="email"
               className="input-element"
@@ -47,9 +42,7 @@ function Login() {
           <div className="form-group">
             <label>Password</label>
             <input
-              onChange={(event) => {
-                setPassword(event.target.event);
-              }}
+              onChange={(event) => setPassword(event.target.value)}
               value={password}
               type="password"
               className="input-element"

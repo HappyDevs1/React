@@ -1,3 +1,4 @@
+// SignUp.js
 import React, { useState } from "react";
 import Layout from "./Layout";
 import Footer from "./Footer";
@@ -7,28 +8,24 @@ import { createUserWithEmailAndPassword } from "firebase/auth";
 function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [registered, setRegistered] = useState(false);
 
-  function handleSignUp(event) {
-    event
-      .preventDefault()
-      .then(() => {
-        const userCredential = createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        console.log("User created: ", userCredential.user);
-        setRegistered(true)
-      })
-      .catch(() => {
-        console.log("Error signing up user");
-      });
+  async function handleSignUp(event) {
+    event.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User created: ", userCredential.user);
+      setRegistered(true);
+      setEmail("");
+      setPassword("");
+    } catch (error) {
+      console.error("Error signing up user:", error);
+    }
   }
+
   return (
     <div>
-      <Layout />
+      <Layout registered={registered} />
       <div className="element-container">
         <h1>Create account</h1>
         <form onSubmit={handleSignUp}>
@@ -50,7 +47,7 @@ function SignUp() {
               onChange={(event) => {
                 setPassword(event.target.value);
               }}
-              value={email}
+              value={password}
               type="password"
               className="input-element"
               placeholder="password"
