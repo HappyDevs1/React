@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Layout = ({ children, logIn }) => {
-  const loginText = (props) => {
-    if (props.logIn === false) {
-      console.log("Not logged in")
+const Layout = ({ children, loggedIn }) => {
+  const loginText = () => {
+    if (loggedIn) {
+      return <div>Logout</div>
     } else {
-      console.log("Logged in")
+      return <div>Login</div>
     }
   }
   return (
