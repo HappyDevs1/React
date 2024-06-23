@@ -4,11 +4,14 @@ import Layout from "./Layout";
 import Footer from "./Footer";
 import { auth } from "../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
+import { useHistory } from 'react-router-dom'
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loggedIn, setLoggedIn] = useState(false);
+
+  const history = useHistory();
 
   async function handleLogin(event) {
     event.preventDefault();
