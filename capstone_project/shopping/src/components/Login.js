@@ -16,6 +16,7 @@ function Login() {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       console.log("Logged in as:", userCredential.user);
       setLoggedIn(true);
+      history.push("/adding")
     } catch (error) {
       console.error("Error logging in:", error);
     }
