@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, logIn }) => {
+  const loginText = (props) => {
+    if (props.logIn === false) {
+      console.log("Not logged in")
+    } else {
+      console.log("Logged in")
+    }
+  }
   return (
     <div>
       <header>
@@ -23,7 +30,7 @@ const Layout = ({ children }) => {
           </li>
           <li>
             <Link to="/login" style={{ textDecoration: 'none' }}>
-            <div className='nav-link'>Login</div>
+            <div className='nav-link'>{loginText()}</div>
             </Link>
           </li>
         </ul>

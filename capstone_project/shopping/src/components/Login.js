@@ -8,6 +8,8 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const [logIn, loggedIn] = useState(false);
+
   function handleLogin(event) {
     event
       .preventDefault()
@@ -26,7 +28,7 @@ function Login() {
 
   return (
     <div>
-      <Layout />
+      <Layout logIn={logIn} />
       <div className="element-container">
         <h1>Login</h1>
         <form onSubmit={handleLogin}>
