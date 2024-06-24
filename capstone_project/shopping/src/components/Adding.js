@@ -1,13 +1,17 @@
 import React from 'react';
 import Layout from './Layout';
-import Footer from './Footer'
+import Footer from './Footer';
+import { db } from '../firebase';
+import { collection, addDoc } from 'firebase/firestore';
 
 function Adding({loggedIn}) {
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    .then(() => {
-
-    })
+  const addProduct = async (userId, product) => {
+    try {
+      const docRef = await addDoc(collection(db, "users", userId, "products"), product);
+      console.log("Document written with ID:", docRef.id)
+    } catch (e) {
+      console.error("Error adding document:", e)
+    }
   }
   return (
     <div>
