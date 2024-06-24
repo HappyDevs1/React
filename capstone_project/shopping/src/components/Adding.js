@@ -3,7 +3,12 @@ import Layout from './Layout';
 import Footer from './Footer'
 
 function Adding({loggedIn}) {
-  
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    .then(() => {
+
+    })
+  }
   return (
     <div>
       <Layout loggedIn={loggedIn} />
