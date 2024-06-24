@@ -14,10 +14,11 @@
   margin-bottom: 1rem;
 }
 .input-element {
-  width: 15rem;
+  width: 20rem;
 }
 .element-container {
   margin-left: 3rem;
+  margin-right: 3rem;
 }
 .nav-items {
   display: flex;

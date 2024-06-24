@@ -23,8 +23,6 @@ function Login() {
     } catch (error) {
       console.error("Error logging in:", error);
     }
-    setEmail("");
-    setPassword("");
   }
 
   return (
