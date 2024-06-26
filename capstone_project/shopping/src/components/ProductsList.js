@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Layout from './Layout';
 import Footer from './Footer';
-import Table from 'react-bootstrap/Table'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, getProducts } from "../firebase";
-
 
 function ProductsList() {
   const [user] = useAuthState(auth);
@@ -31,15 +29,32 @@ function ProductsList() {
 
   return (
     <div>
-      <Layout />
-      <h2>Your Products</h2>
-      <ul>
-        {products.map(product => (
-          <li key={product.id}>
-            {product.name} - {product.quantity} - ${product.price}
-          </li>
-        ))}
-      </ul>
+      <Layout loggedIn={true} />
+      <div className="element-container">
+        <h2>Your Products</h2>
+        <div className="table-responsive">
+          <table className="table table-striped">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+              </tr>
+            </thead>
+            <tbody>
+              {products.map((product, index) => (
+                <tr key={product.id}>
+                  <td>{index + 1}</td>
+                  <td>{product.name}</td>
+                  <td>{product.quantity}</td>
+                  <td>{product.price}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
       <Footer />
     </div>
   );

@@ -82,7 +82,7 @@ function Adding({ loggedIn }) {
           <br />
           <p className='mt-5'>Click the button below to view your product list</p>
           <button className='bg-warning'>
-            <a href='/user/products'>My Products</a>
+            <a href='/user/products' style={{ textDecoration: 'none' }}>My Products</a>
           </button>
         </form>
       </div>

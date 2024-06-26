@@ -18,6 +18,7 @@ function SignUp() {
       setRegistered(true);
       setEmail("");
       setPassword("");
+      return <p>User has been created, Please proceed to login</p>
     } catch (error) {
       console.error("Error signing up user:", error);
     }

@@ -1,5 +1,4 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import Main from "./components/Main";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
@@ -7,7 +6,6 @@ import Adding from "./components/Adding";
 import ProductsList from './components/ProductsList';
 import "./App.css";
 import { BrowserRouter, Route} from "react-router-dom";
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
