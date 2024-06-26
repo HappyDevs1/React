@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import  { useHistory } from 'react-router-dom';
 import Layout from './Layout';
 import Footer from './Footer';
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -37,6 +38,11 @@ function Adding({ loggedIn }) {
     }
   };
 
+  const history = useHistory();
+  const redirectToProduct = () => {
+    history.push("/user/products")
+  }
+
   return (
     <div>
       <Layout loggedIn={loggedIn} />
@@ -72,6 +78,11 @@ function Adding({ loggedIn }) {
           </div>
           <button type="submit" className="bg-warning">
             Add
+          </button>
+          <br />
+          <p className='mt-5'>Click the button below to view your product list</p>
+          <button className='bg-warning'>
+            <a href='/user/products'>My Products</a>
           </button>
         </form>
       </div>

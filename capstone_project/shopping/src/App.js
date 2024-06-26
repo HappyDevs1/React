@@ -7,6 +7,7 @@ import Adding from "./components/Adding";
 import ProductsList from './components/ProductsList';
 import "./App.css";
 import { BrowserRouter, Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
@@ -24,7 +25,7 @@ function App() {
         <Route path="/adding">
           <Adding />
         </Route>
-        <Route path="user/products">
+        <Route path="/user/products">
           <ProductsList />
         </Route>
       </BrowserRouter>

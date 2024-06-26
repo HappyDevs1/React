@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Layout from './Layout';
 import Footer from './Footer';
+import Table from 'react-bootstrap/Table'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, getProducts } from "../firebase";
+
 
 function ProductsList() {
   const [user] = useAuthState(auth);
