@@ -3,6 +3,9 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { doc, setDoc } from "firebase/firestore";
+import { db } from "./firebase";
+import { collection, addDoc } from "firebase/firestore";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -35,5 +38,18 @@ const saveUserData = async (user) => {
     console.error('Error saving user data:', error);
   }
 };
+
+
+const addProduct = async (userId, product) => {
+  try {
+    const docRef = await addDoc(collection(db, "users", userId, "products"), product);
+    console.log("Document written with ID: ", docRef.id);
+  } catch (e) {
+    console.error("Error adding document: ", e);
+  }
+};
+
+export { addProduct };
+
 
 export { auth, db, saveUserData };
