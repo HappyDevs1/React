@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import Layout from './Layout';
 import Footer from './Footer';
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth, db } from "../firebase";
-import { collection, addDoc } from "firebase/firestore";
+import { auth, addProduct } from "../firebase";
 
 function Adding({ loggedIn }) {
   const [user] = useAuthState(auth);
@@ -27,7 +26,7 @@ function Adding({ loggedIn }) {
     };
 
     try {
-      await addDoc(collection(db, "users", user.uid, "products"), product);
+      await addProduct(user.uid, product);
       console.log("Product added successfully!");
       // Clear form fields after successful addition
       setProductName("");
