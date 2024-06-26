@@ -3,12 +3,12 @@ import { getAuth } from "firebase/auth";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
+  apiKey: "AIzaSyB3N1Y8JVztPck6ygkQEyqiwtf5nD4WMTU",
+  authDomain: "shopping-calculator-af399.firebaseapp.com",
+  projectId: "shopping-calculator-af399",
+  storageBucket: "shopping-calculator-af399.appspot.com",
+  messagingSenderId: "261786743462",
+  appId: "1:261786743462:web:92e1bd8e81bae01b647a67"
 };
 
 const app = initializeApp(firebaseConfig);
