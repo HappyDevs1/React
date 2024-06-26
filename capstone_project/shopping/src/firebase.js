@@ -15,7 +15,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Function to add a product to Firestore
 const addProduct = async (userId, product) => {
   try {
     const docRef = await addDoc(collection(db, "users", userId, "products"), product);
@@ -25,4 +24,13 @@ const addProduct = async (userId, product) => {
   }
 };
 
-export { auth, db, addProduct };
+const getProducts = async (userId) => {
+  const products = [];
+  const querySnapshot = await getDocs(collection(db, "users", userId, "products"));
+  querySnapshot.forEach((doc) => {
+    products.push({ id: doc.id, ...doc.data() });
+  });
+  return products;
+};
+
+export { auth, db, addProduct, getProducts };
