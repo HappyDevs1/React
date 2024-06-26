@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Layout from './Layout';
+import Footer from './Footer';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, getProducts } from "../firebase";
 
@@ -27,6 +29,7 @@ function ProductsList() {
 
   return (
     <div>
+      <Layout />
       <h2>Your Products</h2>
       <ul>
         {products.map(product => (
@@ -35,6 +38,7 @@ function ProductsList() {
           </li>
         ))}
       </ul>
+      <Footer />
     </div>
   );
 }
