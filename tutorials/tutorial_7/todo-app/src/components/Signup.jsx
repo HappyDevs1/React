@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import { auth } from "../firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 function Signup () {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [contacts, setContacts] = useState("")
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate()
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -20,6 +23,8 @@ function Signup () {
       setPassword("");
 
       return <p>User has been created, Please proceed to login</p>
+      
+      navigate("/login");
     } catch (error) {
       console.error("Error signing up user:", error);
     }
