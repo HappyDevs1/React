@@ -1,4 +1,30 @@
+import React, { useState } from "react";
+import { auth } from "../firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+
 function Signup () {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [contacts, setContacts] = useState("")
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      console.log("User created: ", userCredential.user);
+
+      setName("");
+      setEmail("");
+      setContacts("");
+      setPassword("");
+
+      return <p>User has been created, Please proceed to login</p>
+    } catch (error) {
+      console.error("Error signing up user:", error);
+    }
+  }
+
   return (
         <div className="h-[100vh] items-center flex justify-center px-5 lg:px-0">
           <div className="max-w-screen-xl bg-white border shadow sm:rounded-lg flex justify-center flex-1">
@@ -10,8 +36,10 @@ function Signup () {
                 }}
               ></div>
             </div>
+           
             <div className="lg:w-1/2 xl:w-5/12 p-6 sm:p-12">
               <div className=" flex flex-col items-center">
+              <form onSubmit={handleSubmit}>
                 <div className="text-center">
                   <h1 className="text-2xl xl:text-4xl font-extrabold text-blue-900">
                     Student Sign up
@@ -42,7 +70,7 @@ function Signup () {
                       type="password"
                       placeholder="Password"
                     />
-                    <button className="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none">
+                    <button className="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" type="submit">
                       <svg
                         className="w-6 h-6 -ml-2"
                         fill="none"
@@ -65,6 +93,7 @@ function Signup () {
                     </p>
                   </div>
                 </div>
+                </form>
               </div>
             </div>
           </div>
