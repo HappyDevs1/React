@@ -51,24 +51,40 @@ function Signup () {
                 <div className="w-full flex-1 mt-8">
                   <div className="mx-auto max-w-xs flex flex-col gap-4">
                     <input
+                    onChange={(event) => {
+                      setName(event.target.value);
+                    }}
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="text"
                       placeholder="Enter your name"
+                      value={name}
                     />
                     <input
+                    onChange={(event) => {
+                      setEmail(event.target.value)
+                    }}
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="email"
                       placeholder="Enter your email"
+                      value={email}
                     />
                     <input
+                    onChange={(event) => {
+                      setContacts(event.target.value);
+                    }}
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="tel"
                       placeholder="Enter your phone"
+                      value={contacts}
                     />
                     <input
+                    onChange={(event) => {
+                      setPassword(event.target.value)
+                    }}
                       className="w-full px-5 py-3 rounded-lg font-medium bg-gray-100 border border-gray-200 placeholder-gray-500 text-sm focus:outline-none focus:border-gray-400 focus:bg-white"
                       type="password"
                       placeholder="Password"
+                      value={password}
                     />
                     <button className="mt-5 tracking-wide font-semibold bg-blue-900 text-gray-100 w-full py-4 rounded-lg hover:bg-indigo-700 transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none" type="submit">
                       <svg
