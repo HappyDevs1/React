@@ -29,6 +29,11 @@ function App() {
               </Link>
             </li>
             <li>
+              <Link to="/signup" className="text-white hover:text-gray-200">
+                Register
+              </Link>
+            </li>
+            <li>
               <Link to="/login" className="text-white hover:text-gray-200">
                 {auth === true? "logout": "login"}
               </Link>
