@@ -9,7 +9,7 @@ function Signup () {
   const [contacts, setContacts] = useState("")
   const [password, setPassword] = useState("");
 
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -23,8 +23,8 @@ function Signup () {
       setPassword("");
 
       return <p>User has been created, Please proceed to login</p>
-      
-      navigate("/login");
+
+      await navigate("/login");
     } catch (error) {
       console.error("Error signing up user:", error);
     }
