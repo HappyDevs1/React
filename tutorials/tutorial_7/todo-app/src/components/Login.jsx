@@ -19,7 +19,7 @@ function Login() {
       );
       console.log("Logged in as: ", userCredential.user);
 
-      navigate("/home");
+      navigate("/todo-list");
     } catch (error) {
       console.error("Error login in: ", error);
     }
