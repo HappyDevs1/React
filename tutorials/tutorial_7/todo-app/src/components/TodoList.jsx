@@ -1,9 +1,14 @@
+import React, { useState } from "react";
+// import { useAuthState } from "react-firebase-hooks/auth";
+// import { auth, addTodo } from "../firebase";
+
 function TodoList () {
+  const [todo, setTodo] = useState("");
   return (
     <div>
-      <h1>TodoList</h1>
+
     </div>
   )
-}
+};
 
 export default TodoList;
